@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import createApp from 'vue';
 
 export default {
   /**
@@ -25,7 +25,7 @@ export default {
     }
     // add new translation
     if (Object.prototype.hasOwnProperty.call(data, 'translation')) {
-      Vue.set(state.translations, data.translation.name, Object.freeze(data.translation.content));
+      createApp.set(state.translations, data.translation.name, Object.freeze(data.translation.content));
     }
   },
 
