@@ -1,6 +1,6 @@
 {
   "name": "laravel-file-manager-vue3",
-  "version": "2.5.7",
+  "version": "2.5.8",
   "description": "File manager for Laravel",
   "keywords": [
     "laravel",
@@ -22,6 +22,7 @@
     "codemirror": "^5.62.3",
     "core-js": "^3.17.2",
     "cropperjs": "^1.5.12",
+    "mitt": "^3.0.0",
     "plyr": "^3.6.8",
     "vue": "^3.2.8",
     "vue-codemirror": "^4.0.6",

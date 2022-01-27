@@ -23,25 +23,28 @@ $ npm install laravel-file-manager --save
 **IF** your App using Vuex store
 
 ```
+import { createApp } from 'vue';
 import FileManager from 'laravel-file-manager'
 import store from './path-to-your-store/store'   // your Vuex store
 
-Vue.use(FileManager, {store})
+app.use(FileManager,{store});
+app.mount('#yourdiv');
 ```
 
 **ELSE** you need to create a new vuex instance
 
 ```
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createApp } from 'vue';
+import { createStore } from 'vuex';
 import FileManager from 'laravel-file-manager'
 
-Vue.use(Vuex);
-
+const app = createApp({});
 // create Vuex store, if you don't have it
-const store = new Vuex.Store();
+const store = createStore({});
+app.use(store);
 
-Vue.use(FileManager, {store});
+app.use(FileManager,{store});
+app.mount('#yourdiv');
 ```
 
 `The application store module will be registered under the name 'fm'`

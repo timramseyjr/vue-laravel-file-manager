@@ -8,13 +8,13 @@
         <ul v-for="(group, index) in menu"
             v-bind:key="`g-${index}`"
             class="list-unstyled">
-            <li v-for="(item, index) in group"
-                v-bind:key="`i-${index}`"
-                v-if="showMenuItem(item.name)"
-                v-on:click="menuAction(item.name)">
+            <template v-for="(item, index) in group" :key="`i-${index}`">
+              <li v-if="showMenuItem(item.name)"
+                  v-on:click="menuAction(item.name)">
                 <i class="fa-fw" v-bind:class="item.icon"/>
                 {{ lang.contextMenu[item.name] }}
-            </li>
+              </li>
+            </template>
         </ul>
     </div>
 </template>

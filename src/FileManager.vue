@@ -109,7 +109,8 @@ export default {
     this.$store.dispatch('fm/resetState');
 
     // delete events
-    EventBus.$off(['contextMenu', 'addNotification']);
+    EventBus.$off('contextMenu');
+    EventBus.$off('addNotification');
 
     // eject interceptors
     HTTP.interceptors.request.eject(this.interceptorIndex.request);

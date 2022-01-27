@@ -1,6 +1,10 @@
-import createApp from 'vue';
+import mitt from 'mitt';
 
 // EventBus
-const EventBus = createApp();
+const EventBus = mitt();
 
-export default EventBus;
+export default {
+    $on: (...args) => EventBus.on(...args),
+    $off: (...args) => EventBus.off(...args),
+    $emit: (...args) => EventBus.emit(...args)
+}
